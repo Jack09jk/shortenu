@@ -1,5 +1,4 @@
 """CoronaVirus LookUp
-
 Syntax: .coronavirus <country>"""
 
 from covid import Covid
@@ -8,7 +7,7 @@ from xtrabot import loader
 
 
 
-@loader.command(pattern=r"^.coronavirus", outgoing=True)
+@loader.command(pattern=r"^.coronavirus ?(.*)", outgoing=True)
 
 async def _(event):
 
@@ -24,9 +23,9 @@ async def _(event):
 
     for name, value in country_data.items():
 
-        output_text += "`{}`: `{}`\n".format(str(name), str(value))
+        output_text += "{}: {}\n".format(str(name), str(value))
 
-    await event.edit("**CoronaVirus Info in {}**:\n\n{}".format(country.capitalize(), output_text))
+    await event.edit("CoronaVirus Info in {}:\n\n{}".format(country.capitalize(), output_text))
 
 
 
