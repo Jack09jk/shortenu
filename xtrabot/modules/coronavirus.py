@@ -1,7 +1,7 @@
 """CoronaVirus LookUp
 Syntax: .coronavirus <country>"""
 
-from covid import Covid
+from covid-cli import Covid-cli
 
 from xtrabot import loader
 
